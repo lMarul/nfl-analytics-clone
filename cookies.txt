@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+nfl.com	TRUE	/	FALSE	1999999999	nfl.v1v2.id	ab8038ea-cd70-4197-8aed-a5c87ee797fd
+

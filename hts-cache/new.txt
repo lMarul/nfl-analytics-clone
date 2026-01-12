@@ -1,0 +1,4 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+16:12:26	17033/17033	---M--	307	error ('Temporary%20Redirect')	text/html	date:Mon,%2012%20Jan%202026%2008:12:26%20GMT	https://www.nfl.com/	C:/My%20Web%20Sites/NFL_Mirror/www.nfl.com/index.html	(from )
+16:12:26	188/188	---M-Z	200	added ('OK')	text/plain	date:Mon,%2012%20Jan%202026%2008:12:27%20GMT	https://www.nfl.com/robots.txt		(from )
+16:12:26	17/17	---M--	308	error ('Unknown%20Error')	text/html	date:Mon,%2012%20Jan%202026%2008:12:27%20GMT	https://www.nfl.com/international/	C:/My%20Web%20Sites/NFL_Mirror/www.nfl.com/international/index.html	(from https://www.nfl.com/)
