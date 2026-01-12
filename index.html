@@ -123,7 +123,172 @@ h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
 					</A>		
 			</TD>
 		</TR>
+		<TR>
+			<TD BACKGROUND="fade.gif">
+				&middot;
+					<A HREF="#" onclick="showAppInsightsManager(); return false;">
+						Application Insights Settings
+					</A>		
+			</TD>
+		</TR>
 	</TABLE>
+	
+	<!-- Application Insights Manager Modal -->
+	<div id="appInsightsModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:30px; border:3px solid #000; border-radius:10px; max-width:800px; width:90%; max-height:90vh; overflow-y:auto; z-index:1000; box-shadow:0 0 50px rgba(0,0,0,0.5);">
+		<h2>Application Insights Manager</h2>
+		<button onclick="closeAppInsightsManager()" style="position:absolute; top:10px; right:10px; padding:5px 10px; cursor:pointer;">✕</button>
+		
+		<h3>Current Configuration</h3>
+		<div style="background:#f0f0f0; padding:15px; border-radius:5px; margin:10px 0;">
+			<strong>Connection String:</strong><br>
+			<textarea id="currentConnectionString" readonly style="width:100%; height:80px; margin-top:5px; font-family:monospace; font-size:11px;"></textarea>
+		</div>
+		
+		<h3>Create New Application Insights Resource</h3>
+		<div style="background:#e8f4f8; padding:15px; border-radius:5px; margin:10px 0;">
+			<p><strong>Option 1: Azure Portal (Recommended)</strong></p>
+			<ol style="line-height:1.8em;">
+				<li>Go to <a href="https://portal.azure.com" target="_blank">Azure Portal</a></li>
+				<li>Click "Create a resource" → Search for "Application Insights"</li>
+				<li>Fill in: Resource name, Region, Resource group</li>
+				<li>Click "Review + Create" → "Create"</li>
+				<li>After creation, go to resource → Copy the <strong>Connection String</strong></li>
+				<li>Paste it in the form below to update this page</li>
+			</ol>
+			
+			<p><strong>Option 2: Azure CLI</strong></p>
+			<div style="background:#fff; padding:10px; border-radius:3px; font-family:monospace; font-size:12px; overflow-x:auto;">
+				az monitor app-insights component create \<br>
+				&nbsp;&nbsp;--app MyApp \<br>
+				&nbsp;&nbsp;--location eastasia \<br>
+				&nbsp;&nbsp;--resource-group MyResourceGroup \<br>
+				&nbsp;&nbsp;--application-type web
+			</div>
+			
+			<p><strong>Option 3: PowerShell</strong></p>
+			<div style="background:#fff; padding:10px; border-radius:3px; font-family:monospace; font-size:12px; overflow-x:auto;">
+				New-AzApplicationInsights -Name "MyApp" `<br>
+				&nbsp;&nbsp;-ResourceGroupName "MyResourceGroup" `<br>
+				&nbsp;&nbsp;-Location "eastasia" `<br>
+				&nbsp;&nbsp;-Kind web
+			</div>
+		</div>
+		
+		<h3>Update Connection String</h3>
+		<div style="background:#fff8dc; padding:15px; border-radius:5px; margin:10px 0;">
+			<p>Paste your new Application Insights connection string here:</p>
+			<textarea id="newConnectionString" placeholder="InstrumentationKey=xxx;IngestionEndpoint=https://...;LiveEndpoint=https://..." style="width:100%; height:100px; margin:10px 0; font-family:monospace; font-size:11px;"></textarea>
+			<button onclick="updateConnectionString()" style="padding:10px 20px; background:#007acc; color:#fff; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Update Configuration</button>
+			<p style="color:#c00; margin-top:10px;"><strong>Note:</strong> This will generate a code snippet. You need to manually update the HTML file.</p>
+		</div>
+		
+		<h3>Test Your Configuration</h3>
+		<div style="background:#f0fff0; padding:15px; border-radius:5px; margin:10px 0;">
+			<button onclick="testAppInsights()" style="padding:10px 20px; background:#28a745; color:#fff; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Send Test Event</button>
+			<button onclick="openLiveMetrics()" style="padding:10px 20px; background:#17a2b8; color:#fff; border:none; border-radius:5px; cursor:pointer; font-weight:bold; margin-left:10px;">Open Live Metrics</button>
+			<div id="testResult" style="margin-top:10px; padding:10px; background:#fff; border-radius:3px; display:none;"></div>
+		</div>
+	</div>
+	<div id="modalBackdrop" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:999;" onclick="closeAppInsightsManager()"></div>
+	
+	<script>
+		// Show current connection string when modal opens
+		function showAppInsightsManager() {
+			const modal = document.getElementById('appInsightsModal');
+			const backdrop = document.getElementById('modalBackdrop');
+			const currentConfig = document.getElementById('currentConnectionString');
+			
+			// Extract current connection string from the appInsights config
+			const scriptContent = document.querySelector('script').textContent;
+			const match = scriptContent.match(/connectionString:\s*"([^"]+)"/);
+			if (match) {
+				currentConfig.value = match[1];
+			} else {
+				currentConfig.value = "No connection string found";
+			}
+			
+			modal.style.display = 'block';
+			backdrop.style.display = 'block';
+			appInsights.trackEvent({name: 'OpenedAppInsightsManager'});
+		}
+		
+		function closeAppInsightsManager() {
+			document.getElementById('appInsightsModal').style.display = 'none';
+			document.getElementById('modalBackdrop').style.display = 'none';
+		}
+		
+		function updateConnectionString() {
+			const newConnString = document.getElementById('newConnectionString').value.trim();
+			
+			if (!newConnString) {
+				alert('Please enter a connection string');
+				return;
+			}
+			
+			// Validate format
+			if (!newConnString.includes('InstrumentationKey=') || !newConnString.includes('IngestionEndpoint=')) {
+				alert('Invalid connection string format. Make sure it includes InstrumentationKey and IngestionEndpoint.');
+				return;
+			}
+			
+			// Generate code snippet
+			const codeSnippet = `
+Replace line 12-13 in your index.html with:
+
+cfg: {
+connectionString: "${newConnString}"
+}});
+
+Then save and reload the page.`;
+			
+			alert(codeSnippet);
+			appInsights.trackEvent({name: 'UpdatedConnectionString'});
+		}
+		
+		function testAppInsights() {
+			const testResult = document.getElementById('testResult');
+			
+			try {
+				appInsights.trackEvent({
+					name: 'TestEvent',
+					properties: {
+						timestamp: new Date().toISOString(),
+						testType: 'Manual Test',
+						source: 'AppInsightsManager'
+					}
+				});
+				
+				appInsights.trackMetric({
+					name: 'TestMetric',
+					average: Math.random() * 100
+				});
+				
+				testResult.style.display = 'block';
+				testResult.style.background = '#d4edda';
+				testResult.style.color = '#155724';
+				testResult.innerHTML = '✓ Test events sent successfully!<br>Check Azure Portal → Application Insights → Live Metrics to see real-time data.';
+			} catch (error) {
+				testResult.style.display = 'block';
+				testResult.style.background = '#f8d7da';
+				testResult.style.color = '#721c24';
+				testResult.innerHTML = '✗ Error sending test events: ' + error.message;
+			}
+		}
+		
+		function openLiveMetrics() {
+			const currentConfig = document.getElementById('currentConnectionString').value;
+			const match = currentConfig.match(/ApplicationId=([^;]+)/);
+			
+			if (match) {
+				const appId = match[1];
+				const url = `https://portal.azure.com/#@/resource/subscriptions//resourceGroups//providers/microsoft.insights/components/${appId}/quickPulse`;
+				window.open(url, '_blank');
+				appInsights.trackEvent({name: 'OpenedLiveMetrics'});
+			} else {
+				alert('Could not extract Application ID from connection string. Please open Azure Portal manually.');
+			}
+		}
+	</script>
 	<BR>
 	<BR>
 	<BR>
