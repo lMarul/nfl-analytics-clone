@@ -1,313 +1,288 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<!-- Application Insights Monitoring -->
-	<script type="text/javascript">
-		var sdkInstance="appInsights";window[sdkInstance]="appInsights";var aiName=window.aiName||"appInsights",aisdk=window[aiName]||function(e){function t(e){var t=!1;return function(){t||(t=!0,e())}}var n={};return n.initialize=function(t,e){var i=window.document.getElementsByTagName("script")[0];if(n.config=t,t.url=t.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",n.config.name=sdkInstance,window[aiName]=n,n.queue=[],n.config.disableExceptionTracking||window.addEventListener("error",function(e){n.trackException({exception:new Error(e.message)})}),!0===t.autoTrackPageVisitTime){var o=null;window.addEventListener("beforeunload",function(e){null!==o&&n.trackPageViewPerformance({pageName:window.document.title,pageTiming:{navigationStart:o,responseEnd:new Date}})}),window.addEventListener("load",function(){o=(new Date).getTime()})}!function(e){!function e(t,n){var r=!1;try{var a=e,i=a.apply({},arguments)}catch(e){r=!0}finally{r&&t.queue.push(function(){e.apply({},n)})}}(function(){if(!window.fetch)return void r();var e=window.fetch;window.fetch=function(){var t=e.apply(this,arguments);return t.then(function(e){return e}).catch(function(t){throw t})}},e)}(n,function(){return void 0});var s=document.createElement("script");s.src=n.config.url,document.head.appendChild(s),n.config.extensions=n.config.extensions||[],n.config.extensions.push({identifier:"TelemetryInitializerPlugin",version:"1.0",config:{AppInsightsCore:n.config}}),n.getSKUDefaults=function(){return{}},n.trackPageView=function(e){var t={name:"PageView",properties:{},measurements:{}};if(void 0===e&&(e={}),e.pageName=e.pageName||document.title,e.referrer=e.referrer||document.referrer,e.uri=e.uri||window.location.href,t.properties=e.properties||{},t.properties.pageName=e.pageName,t.properties.referrer=e.referrer,t.properties.uri=e.uri,e.properties&&Object.keys(e.properties).length>0&&(t.properties=Object.assign({},t.properties,e.properties)),e.measurements&&Object.keys(e.measurements).length>0){var i={};Object.keys(e.measurements).forEach(function(e){i[e]=e.measurements[e]}),t.measurements=i}n.trackEvent({name:"PageView",properties:t.properties,measurements:t.measurements})},n.trackEvent=function(e){void 0===e&&(e={}),e.name=e.name||"Event",n.config.extensions.forEach(function(t){try{(t.core||t).trackEvent(e)}catch(e){console.log("exception in tracking event "+e)}})},n.trackException=function(e){void 0===e&&(e={}),void 0===e.exception&&(e.exception=new Error),e.exception.message=e.exception.message||"Uncaught Exception",n.trackEvent({name:"Exception",properties:{ExceptionMessage:e.exception.message,ExceptionStack:e.exception.stack||""}})},n.trackTrace=function(e,t){void 0===e&&(e=""),void 0===t&&(t="Information"),n.trackEvent({name:"Trace",properties:{TraceMessage:e,SeverityLevel:t}})},n.trackMetric=function(e,t,r){void 0===e&&(e=""),void 0===t&&(t=0),void 0===r&&(r={}),n.trackEvent({name:"Metric",properties:Object.assign({MetricName:e,MetricValue:t},r.properties||{}),measurements:{}})}},e}(t)};return n}({
-			connectionString: "InstrumentationKey=e6b73e30-4ad9-44ae-81b5-70642d19935a;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=5008bece-9d47-49f3-8d6b-e8eb539f18fd"
-		});
-		
-		// Track page view immediately
-		appInsights.trackPageView();
-		
-		// Track custom event
-		appInsights.trackEvent({
-			name: 'ClonedSiteVisited',
-			properties: { timestamp: new Date().toISOString() }
-		});
-
-	// NOTE: Auto-redirect disabled so users can click on teams
-	</script>
-	
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>NFL Teams - Analytics Clone</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Teams - Fan Analytics</title>
+    
+    <!-- Application Insights Tracking Code -->
+    <script type="text/javascript">
+    !function(T,l,y){var S=T.location,k="script",D="connectionString",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),n}var i=d.url||y.src;if(i){function u(e){var n=l.createElement(k);n.src=e,n.async=!0,n.crossOrigin="anonymous";var a=l.getElementsByTagName(k)[0];a.parentNode.insertBefore(n,a)}var s=T[t],c=s&&s.queue;if(c&&0===c.length){var o=["trackEvent","trackPageView","trackException","trackTrace","trackDependencyData","trackMetric","trackPageViewPerformance","startTrackPage","stopTrackPage","startTrackEvent","stopTrackEvent","addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"];for(var r=0;r<o.length;r++)(function(e){s[e]=function(){var t=arguments;s.queue.push(function(){s[e].apply(s,t)})}})(o[r])}u(i)}return m}({
+        src: "https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js",
+        crossOrigin: "anonymous",
+        cfg: {
+            connectionString: "InstrumentationKey=e6b73e30-4ad9-44ae-81b5-70642d19935a;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=5008bece-9d47-49f3-8d6b-e8eb539f18fd"
+        }
+    });window[t]=n,n.queue&&0===n.queue.length&&n.trackPageView({})}(window,document,{src:"https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js",crossOrigin:"anonymous",cfg:{connectionString:"InstrumentationKey=e6b73e30-4ad9-44ae-81b5-70642d19935a;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=5008bece-9d47-49f3-8d6b-e8eb539f18fd"}});
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .header {
+            background: linear-gradient(90deg, #013369 0%, #d50a0a 100%);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .header p {
+            margin-top: 10px;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        .instructions {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .conference {
+            margin-bottom: 40px;
+        }
+        .conference-title {
+            font-size: 1.8em;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .afc-title {
+            background: linear-gradient(90deg, #013369, #0066cc);
+        }
+        .nfc-title {
+            background: linear-gradient(90deg, #d50a0a, #ff4444);
+        }
+        .division {
+            margin-bottom: 25px;
+        }
+        .division-name {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #666;
+        }
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .team-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+        }
+        .team-card:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .team-card:active {
+            transform: scale(0.95);
+        }
+        .team-name {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .click-count {
+            font-size: 0.85em;
+            color: #88ff88;
+            margin-top: 8px;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0,0,0,0.3);
+            margin-top: 40px;
+        }
+        .stats-box {
+            background: rgba(0,100,0,0.3);
+            border: 1px solid #00ff00;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
+<body>
 
-<body style="font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 20px;">
-	
-<!-- NFL Teams Section with Tracking -->
-<div id="teams">
-<H2 ALIGN=Center style="color:#003366;">Select Your Favorite NFL Team</H2>
-<p align="center" style="margin:20px; font-size:14px;">Click on any team to track your interest!</p>
-
-<TABLE BORDER="0" WIDTH="100%" CELLSPACING="10" CELLPADDING="10" style="max-width:900px; margin:0 auto;">
-<!-- AFC East -->
-<TR>
-<TD colspan="4" style="background:#003366; color:#fff; padding:10px; font-weight:bold;">AFC EAST</TD>
-</TR>
-<TR>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Buffalo Bills'}}); return false;"> Buffalo Bills</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Miami Dolphins'}}); return false;"> Miami Dolphins</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New England Patriots'}}); return false;"> New England Patriots</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New York Jets'}}); return false;"> New York Jets</A></TD>
-</TR>
-
-<!-- AFC North -->
-<TR>
-<TD colspan="4" style="background:#003366; color:#fff; padding:10px; font-weight:bold;">AFC NORTH</TD>
-</TR>
-<TR>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Baltimore Ravens'}}); return false;"> Baltimore Ravens</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Cincinnati Bengals'}}); return false;"> Cincinnati Bengals</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Cleveland Browns'}}); return false;"> Cleveland Browns</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Pittsburgh Steelers'}}); return false;"> Pittsburgh Steelers</A></TD>
-</TR>
-
-<!-- AFC South -->
-<TR>
-<TD colspan="4" style="background:#003366; color:#fff; padding:10px; font-weight:bold;">AFC SOUTH</TD>
-</TR>
-<TR>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Houston Texans'}}); return false;"> Houston Texans</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Indianapolis Colts'}}); return false;"> Indianapolis Colts</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Jacksonville Jaguars'}}); return false;"> Jacksonville Jaguars</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Tennessee Titans'}}); return false;"> Tennessee Titans</A></TD>
-</TR>
-
-<!-- AFC West -->
-<TR>
-<TD colspan="4" style="background:#003366; color:#fff; padding:10px; font-weight:bold;">AFC WEST</TD>
-</TR>
-<TR>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Denver Broncos'}}); return false;"> Denver Broncos</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Kansas City Chiefs'}}); return false;"> Kansas City Chiefs</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Las Vegas Raiders'}}); return false;"> Las Vegas Raiders</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Los Angeles Chargers'}}); return false;"> Los Angeles Chargers</A></TD>
-</TR>
-
-<!-- NFC East -->
-<TR>
-<TD colspan="4" style="background:#d50a0a; color:#fff; padding:10px; font-weight:bold;">NFC EAST</TD>
-</TR>
-<TR>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Dallas Cowboys'}}); return false;"> Dallas Cowboys</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New York Giants'}}); return false;"> New York Giants</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Philadelphia Eagles'}}); return false;"> Philadelphia Eagles</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Washington Commanders'}}); return false;"> Washington Commanders</A></TD>
-</TR>
-
-<!-- NFC North -->
-<TR>
-<TD colspan="4" style="background:#d50a0a; color:#fff; padding:10px; font-weight:bold;">NFC NORTH</TD>
-</TR>
-<TR>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Chicago Bears'}}); return false;"> Chicago Bears</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Detroit Lions'}}); return false;"> Detroit Lions</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Green Bay Packers'}}); return false;"> Green Bay Packers</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Minnesota Vikings'}}); return false;"> Minnesota Vikings</A></TD>
-</TR>
-
-<!-- NFC South -->
-<TR>
-<TD colspan="4" style="background:#d50a0a; color:#fff; padding:10px; font-weight:bold;">NFC SOUTH</TD>
-</TR>
-<TR>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Atlanta Falcons'}}); return false;"> Atlanta Falcons</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Carolina Panthers'}}); return false;"> Carolina Panthers</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New Orleans Saints'}}); return false;"> New Orleans Saints</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Tampa Bay Buccaneers'}}); return false;"> Tampa Bay Buccaneers</A></TD>
-</TR>
-
-<!-- NFC West -->
-<TR>
-<TD colspan="4" style="background:#d50a0a; color:#fff; padding:10px; font-weight:bold;">NFC WEST</TD>
-</TR>
-<TR>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Arizona Cardinals'}}); return false;"> Arizona Cardinals</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Los Angeles Rams'}}); return false;"> Los Angeles Rams</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'San Francisco 49ers'}}); return false;"> San Francisco 49ers</A></TD>
-<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Seattle Seahawks'}}); return false;"> Seattle Seahawks</A></TD>
-</TR>
-</TABLE>
+<div class="header">
+    <h1>NFL Team Fan Analytics</h1>
+    <p>Azure Application Insights Demo - Click on your favorite teams!</p>
 </div>
 
-<!-- Application Insights Manager Modal -->
-	<div id="appInsightsModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:30px; border:3px solid #000; border-radius:10px; max-width:800px; width:90%; max-height:90vh; overflow-y:auto; z-index:1000; box-shadow:0 0 50px rgba(0,0,0,0.5);">
-		<h2>Application Insights Manager</h2>
-		<button onclick="closeAppInsightsManager()" style="position:absolute; top:10px; right:10px; padding:5px 10px; cursor:pointer;">✕</button>
-		
-		<h3>Current Configuration</h3>
-		<div style="background:#f0f0f0; padding:15px; border-radius:5px; margin:10px 0;">
-			<strong>Connection String:</strong><br>
-			<textarea id="currentConnectionString" readonly style="width:100%; height:80px; margin-top:5px; font-family:monospace; font-size:11px;"></textarea>
-		</div>
-		
-		<h3>Create New Application Insights Resource</h3>
-		<div style="background:#e8f4f8; padding:15px; border-radius:5px; margin:10px 0;">
-			<p><strong>Option 1: Azure Portal (Recommended)</strong></p>
-			<ol style="line-height:1.8em;">
-				<li>Go to <a href="https://portal.azure.com" target="_blank">Azure Portal</a></li>
-				<li>Click "Create a resource" → Search for "Application Insights"</li>
-				<li>Fill in: Resource name, Region, Resource group</li>
-				<li>Click "Review + Create" → "Create"</li>
-				<li>After creation, go to resource → Copy the <strong>Connection String</strong></li>
-				<li>Paste it in the form below to update this page</li>
-			</ol>
-			
-			<p><strong>Option 2: Azure CLI</strong></p>
-			<div style="background:#fff; padding:10px; border-radius:3px; font-family:monospace; font-size:12px; overflow-x:auto;">
-				az monitor app-insights component create \<br>
-				&nbsp;&nbsp;--app MyApp \<br>
-				&nbsp;&nbsp;--location eastasia \<br>
-				&nbsp;&nbsp;--resource-group MyResourceGroup \<br>
-				&nbsp;&nbsp;--application-type web
-			</div>
-			
-			<p><strong>Option 3: PowerShell</strong></p>
-			<div style="background:#fff; padding:10px; border-radius:3px; font-family:monospace; font-size:12px; overflow-x:auto;">
-				New-AzApplicationInsights -Name "MyApp" `<br>
-				&nbsp;&nbsp;-ResourceGroupName "MyResourceGroup" `<br>
-				&nbsp;&nbsp;-Location "eastasia" `<br>
-				&nbsp;&nbsp;-Kind web
-			</div>
-		</div>
-		
-		<h3>Update Connection String</h3>
-		<div style="background:#fff8dc; padding:15px; border-radius:5px; margin:10px 0;">
-			<p>Paste your new Application Insights connection string here:</p>
-			<textarea id="newConnectionString" placeholder="InstrumentationKey=xxx;IngestionEndpoint=https://...;LiveEndpoint=https://..." style="width:100%; height:100px; margin:10px 0; font-family:monospace; font-size:11px;"></textarea>
-			<button onclick="updateConnectionString()" style="padding:10px 20px; background:#007acc; color:#fff; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Update Configuration</button>
-			<p style="color:#c00; margin-top:10px;"><strong>Note:</strong> This will generate a code snippet. You need to manually update the HTML file.</p>
-		</div>
-		
-		<h3>Test Your Configuration</h3>
-		<div style="background:#f0fff0; padding:15px; border-radius:5px; margin:10px 0;">
-			<button onclick="testAppInsights()" style="padding:10px 20px; background:#28a745; color:#fff; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Send Test Event</button>
-			<button onclick="openLiveMetrics()" style="padding:10px 20px; background:#17a2b8; color:#fff; border:none; border-radius:5px; cursor:pointer; font-weight:bold; margin-left:10px;">Open Live Metrics</button>
-			<div id="testResult" style="margin-top:10px; padding:10px; background:#fff; border-radius:3px; display:none;"></div>
-		</div>
-	</div>
-	<div id="modalBackdrop" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:999;" onclick="closeAppInsightsManager()"></div>
-	
-	<script>
-		// Show current connection string when modal opens
-		function showAppInsightsManager() {
-			const modal = document.getElementById('appInsightsModal');
-			const backdrop = document.getElementById('modalBackdrop');
-			const currentConfig = document.getElementById('currentConnectionString');
-			
-			// Extract current connection string from the appInsights config
-			const scriptContent = document.querySelector('script').textContent;
-			const match = scriptContent.match(/connectionString:\s*"([^"]+)"/);
-			if (match) {
-				currentConfig.value = match[1];
-			} else {
-				currentConfig.value = "No connection string found";
-			}
-			
-			modal.style.display = 'block';
-			backdrop.style.display = 'block';
-			appInsights.trackEvent({name: 'OpenedAppInsightsManager'});
-		}
-		
-		function closeAppInsightsManager() {
-			document.getElementById('appInsightsModal').style.display = 'none';
-			document.getElementById('modalBackdrop').style.display = 'none';
-		}
-		
-		function updateConnectionString() {
-			const newConnString = document.getElementById('newConnectionString').value.trim();
-			
-			if (!newConnString) {
-				alert('Please enter a connection string');
-				return;
-			}
-			
-			// Validate format
-			if (!newConnString.includes('InstrumentationKey=') || !newConnString.includes('IngestionEndpoint=')) {
-				alert('Invalid connection string format. Make sure it includes InstrumentationKey and IngestionEndpoint.');
-				return;
-			}
-			
-			// Generate code snippet
-			const codeSnippet = `
-Replace line 12-13 in your index.html with:
+<div class="container">
+    <div class="instructions">
+        <h2>Activity 2: Custom Event Tracking</h2>
+        <p>Every click on a team is tracked by Azure Application Insights as a <strong>TeamViewed</strong> custom event.</p>
+        <p style="margin-top:10px;">Click on teams below to generate tracking data, then view results in Azure Portal - Application Insights - Logs</p>
+        <div class="stats-box">
+            <strong>Total Clicks This Session:</strong> <span id="clickCounter">0</span>
+        </div>
+    </div>
 
-cfg: {
-connectionString: "${newConnString}"
-}});
+    <!-- AFC Conference -->
+    <div class="conference">
+        <div class="conference-title afc-title">AFC - American Football Conference</div>
+        
+        <div class="division">
+            <div class="division-name">AFC East</div>
+            <div class="teams-grid">
+                <a href="#" class="team-card" onclick="trackTeam('Buffalo Bills'); return false;"><div class="team-name">Buffalo Bills</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Miami Dolphins'); return false;"><div class="team-name">Miami Dolphins</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('New England Patriots'); return false;"><div class="team-name">New England Patriots</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('New York Jets'); return false;"><div class="team-name">New York Jets</div></a>
+            </div>
+        </div>
+        
+        <div class="division">
+            <div class="division-name">AFC North</div>
+            <div class="teams-grid">
+                <a href="#" class="team-card" onclick="trackTeam('Baltimore Ravens'); return false;"><div class="team-name">Baltimore Ravens</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Cincinnati Bengals'); return false;"><div class="team-name">Cincinnati Bengals</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Cleveland Browns'); return false;"><div class="team-name">Cleveland Browns</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Pittsburgh Steelers'); return false;"><div class="team-name">Pittsburgh Steelers</div></a>
+            </div>
+        </div>
+        
+        <div class="division">
+            <div class="division-name">AFC South</div>
+            <div class="teams-grid">
+                <a href="#" class="team-card" onclick="trackTeam('Houston Texans'); return false;"><div class="team-name">Houston Texans</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Indianapolis Colts'); return false;"><div class="team-name">Indianapolis Colts</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Jacksonville Jaguars'); return false;"><div class="team-name">Jacksonville Jaguars</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Tennessee Titans'); return false;"><div class="team-name">Tennessee Titans</div></a>
+            </div>
+        </div>
+        
+        <div class="division">
+            <div class="division-name">AFC West</div>
+            <div class="teams-grid">
+                <a href="#" class="team-card" onclick="trackTeam('Denver Broncos'); return false;"><div class="team-name">Denver Broncos</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Kansas City Chiefs'); return false;"><div class="team-name">Kansas City Chiefs</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Las Vegas Raiders'); return false;"><div class="team-name">Las Vegas Raiders</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Los Angeles Chargers'); return false;"><div class="team-name">Los Angeles Chargers</div></a>
+            </div>
+        </div>
+    </div>
 
-Then save and reload the page.`;
-			
-			alert(codeSnippet);
-			appInsights.trackEvent({name: 'UpdatedConnectionString'});
-		}
-		
-		function testAppInsights() {
-			const testResult = document.getElementById('testResult');
-			
-			try {
-				appInsights.trackEvent({
-					name: 'TestEvent',
-					properties: {
-						timestamp: new Date().toISOString(),
-						testType: 'Manual Test',
-						source: 'AppInsightsManager'
-					}
-				});
-				
-				appInsights.trackMetric({
-					name: 'TestMetric',
-					average: Math.random() * 100
-				});
-				
-				testResult.style.display = 'block';
-				testResult.style.background = '#d4edda';
-				testResult.style.color = '#155724';
-				testResult.innerHTML = '✓ Test events sent successfully!<br>Check Azure Portal → Application Insights → Live Metrics to see real-time data.';
-			} catch (error) {
-				testResult.style.display = 'block';
-				testResult.style.background = '#f8d7da';
-				testResult.style.color = '#721c24';
-				testResult.innerHTML = '✗ Error sending test events: ' + error.message;
-			}
-		}
-		
-		function openLiveMetrics() {
-			const currentConfig = document.getElementById('currentConnectionString').value;
-			const match = currentConfig.match(/ApplicationId=([^;]+)/);
-			
-			if (match) {
-				const appId = match[1];
-				const url = `https://portal.azure.com/#@/resource/subscriptions//resourceGroups//providers/microsoft.insights/components/${appId}/quickPulse`;
-				window.open(url, '_blank');
-				appInsights.trackEvent({name: 'OpenedLiveMetrics'});
-			} else {
-				alert('Could not extract Application ID from connection string. Please open Azure Portal manually.');
-			}
-		}
-	</script>
-	<BR>
-	<BR>
-	<BR>
-  	<H6 ALIGN="RIGHT">
-	<I>Mirror and index made by HTTrack Website Copier [XR&amp;CO'2008]</I>
-	</H6>
-	<!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
-	<!-- Thanks for using HTTrack Website Copier! -->
-	<meta HTTP-EQUIV="Refresh" CONTENT="0; URL=www.nfl.com/index.html">
+    <!-- NFC Conference -->
+    <div class="conference">
+        <div class="conference-title nfc-title">NFC - National Football Conference</div>
+        
+        <div class="division">
+            <div class="division-name">NFC East</div>
+            <div class="teams-grid">
+                <a href="#" class="team-card" onclick="trackTeam('Dallas Cowboys'); return false;"><div class="team-name">Dallas Cowboys</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('New York Giants'); return false;"><div class="team-name">New York Giants</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Philadelphia Eagles'); return false;"><div class="team-name">Philadelphia Eagles</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Washington Commanders'); return false;"><div class="team-name">Washington Commanders</div></a>
+            </div>
+        </div>
+        
+        <div class="division">
+            <div class="division-name">NFC North</div>
+            <div class="teams-grid">
+                <a href="#" class="team-card" onclick="trackTeam('Chicago Bears'); return false;"><div class="team-name">Chicago Bears</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Detroit Lions'); return false;"><div class="team-name">Detroit Lions</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Green Bay Packers'); return false;"><div class="team-name">Green Bay Packers</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Minnesota Vikings'); return false;"><div class="team-name">Minnesota Vikings</div></a>
+            </div>
+        </div>
+        
+        <div class="division">
+            <div class="division-name">NFC South</div>
+            <div class="teams-grid">
+                <a href="#" class="team-card" onclick="trackTeam('Atlanta Falcons'); return false;"><div class="team-name">Atlanta Falcons</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Carolina Panthers'); return false;"><div class="team-name">Carolina Panthers</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('New Orleans Saints'); return false;"><div class="team-name">New Orleans Saints</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Tampa Bay Buccaneers'); return false;"><div class="team-name">Tampa Bay Buccaneers</div></a>
+            </div>
+        </div>
+        
+        <div class="division">
+            <div class="division-name">NFC West</div>
+            <div class="teams-grid">
+                <a href="#" class="team-card" onclick="trackTeam('Arizona Cardinals'); return false;"><div class="team-name">Arizona Cardinals</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Los Angeles Rams'); return false;"><div class="team-name">Los Angeles Rams</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('San Francisco 49ers'); return false;"><div class="team-name">San Francisco 49ers</div></a>
+                <a href="#" class="team-card" onclick="trackTeam('Seattle Seahawks'); return false;"><div class="team-name">Seattle Seahawks</div></a>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="footer">
+    <p>Cloud Computing Project - Application Insights Demo</p>
+    <p style="margin-top:10px; opacity:0.7;">Azure Static Web Apps + Application Insights Analytics</p>
+    <p style="margin-top:20px; font-size:0.9em;">
+        <strong>KQL Query for Activity 3:</strong><br>
+        <code style="background:#333; padding:5px 10px; border-radius:4px;">
+            customEvents | where name == "TeamViewed" | summarize Count = count() by tostring(customDimensions.Team) | render piechart
+        </code>
+    </p>
+</div>
 
-<!-- ==================== Start epilogue ==================== -->
-		</td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-</td>
-</tr>
-</table>
-
-<table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
-	<tr>
-	<td id="footer"><small>&copy; 2008 Xavier Roche & other contributors - Web Design: Leto Kauler.</small></td>
-	</tr>
-</table>
+<script>
+    // Click counter for visual feedback
+    var clickCount = 0;
+    
+    // Function to track team clicks with Application Insights
+    function trackTeam(teamName) {
+        // Track with Application Insights
+        if (window.appInsights) {
+            window.appInsights.trackEvent({
+                name: 'TeamViewed',
+                properties: {
+                    Team: teamName,
+                    Timestamp: new Date().toISOString()
+                }
+            });
+            console.log('Tracked: ' + teamName);
+        } else {
+            console.log('Application Insights not loaded yet');
+        }
+        
+        // Update click counter for visual feedback
+        clickCount++;
+        document.getElementById('clickCounter').textContent = clickCount;
+        
+        // Show alert for confirmation
+        alert('Tracked: ' + teamName + '\n\nThis event was sent to Azure Application Insights!');
+    }
+    
+    // Log when page loads
+    console.log('NFL Fan Analytics loaded');
+    console.log('Application Insights tracking active');
+</script>
 
 </body>
-
 </html>
 
 
