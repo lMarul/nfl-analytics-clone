@@ -16,124 +16,7 @@
 			properties: { timestamp: new Date().toISOString() }
 		});
 
-		// REDIRECT: Wait 1 second for tracking, then go to NFL.com
-		setTimeout(function() {
-			window.location.href = 'https://www.nfl.com';
-		}, 1000);
-	</script>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all stru[...]
-	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, brows[...]
-	<title>Local index - HTTrack Website Copier</title>
-  <!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
-	<style type="text/css">
-	<!--
-		
-		// CRITICAL: Wait 500ms for tracking to send, THEN redirect to NFL
-		setTimeout(function() {
-			window.location.href = 'https://www.nfl.com';
-		}, 500);
-body {
-	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
-	background: #77b;
-}
-body, td {
-	font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	}
-
-#subTitle {
-	background: #000;  color: #fff;  padding: 4px;  font-weight: bold; 
-	}
-
-#siteNavigation a, #siteNavigation .current {
-	font-weight: bold;  color: #448;
-	}
-#siteNavigation a:link    { text-decoration: none; }
-#siteNavigation a:visited { text-decoration: none; }
-
-#siteNavigation .current { background-color: #ccd; }
-
-#siteNavigation a:hover   { text-decoration: none;  background-color: #fff;  color: #000; }
-#siteNavigation a:active  { text-decoration: none;  background-color: #ccc; }
-
-
-a:link    { text-decoration: underline;  color: #00f; }
-a:visited { text-decoration: underline;  color: #000; }
-a:hover   { text-decoration: underline;  color: #c00; }
-a:active  { text-decoration: underline; }
-
-#pageContent {
-	clear: both;
-	border-bottom: 6px solid #000;
-	padding: 10px;  padding-top: 20px;
-	line-height: 1.65em;
-	background-image: url(backblue.gif);
-	background-repeat: no-repeat;
-	background-position: top right;
-	}
-
-#pageContent, #siteNavigation {
-	background-color: #ccd;
-	}
-
-
-.imgLeft  { float: left;   margin-right: 10px;  margin-bottom: 10px; }
-.imgRight { float: right;  margin-left: 10px;   margin-bottom: 10px; }
-
-hr { height: 1px;  color: #000;  background-color: #000;  margin-bottom: 15px; }
-
-h1 { margin: 0;  font-weight: bold;  font-size: 2em; }
-h2 { margin: 0;  font-weight: bold;  font-size: 1.6em; }
-h3 { margin: 0;  font-weight: bold;  font-size: 1.3em; }
-h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
-
-.blak { background-color: #000; }
-.hide { display: none; }
-.tableWidth { min-width: 400px; }
-
-.tblRegular       { border-collapse: collapse; }
-.tblRegular td    { padding: 6px;  background-image: url(fade.gif);  border: 2px solid #99c; }
-.tblHeaderColor, .tblHeaderColor td { background: #99c; }
-.tblNoBorder td   { border: 0; }
-
-</style>
-
-</head>
-
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="3" class="tableWidth">
-	<tr>
-	<td id="subTitle">HTTrack Website Copier - Open Source offline browser</td>
-	</tr>
-</table>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="0" class="tableWidth">
-<tr class="blak">
-<td>
-	<table width="100%" border="0" align="center" cellspacing="1" cellpadding="0">
-	<tr>
-	<td colspan="6"> 
-		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="10">
-		<tr> 
-		<td id="pageContent"> 
-<!-- ==================== End prologue ==================== -->
-
-	<meta name="generator" content="HTTrack Website Copier/3.x">
-	<TITLE>Local index - HTTrack</TITLE>
-</HEAD>
-<BODY>
-<H1 ALIGN=Center>Index of locally available sites:</H1>
-	<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="0">
-		<TR>
-			<TD BACKGROUND="fade.gif">
-				&middot;
-					<A HREF="www.nfl.com/index.html">
-						www.nfl.com/index.html
-					</A>		
-			</TD>
-		</TR>
-		<TR>
-			<TD BACKGROUND="fade.gif">
-				&middot;
-					<A HREF="#teams" onclick="appInsights.trackEvent({name: 'UserClickedTeams'});">
+		// NOTE: Auto-redirect disabled so users can click on teams">
 						Teams
 					</A>		
 			</TD>
@@ -148,7 +31,104 @@ h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
 		</TR>
 	</TABLE>
 	
-	<!-- Application Insights Manager Modal -->
+	
+<!-- NFL Teams Section with Tracking -->
+<div id="teams" style="margin-top:30px;">
+<H2 ALIGN=Center style="color:#003366;">Select Your Favorite NFL Team</H2>
+<p align="center" style="margin:20px; font-size:14px;">Click on any team to track your interest!</p>
+
+<TABLE BORDER="0" WIDTH="100%" CELLSPACING="10" CELLPADDING="10" style="max-width:900px; margin:0 auto;">
+<!-- AFC East -->
+<TR>
+<TD colspan="4" style="background:#003366; color:#fff; padding:10px; font-weight:bold;">AFC EAST</TD>
+</TR>
+<TR>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Buffalo Bills'}}); return false;"> Buffalo Bills</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Miami Dolphins'}}); return false;"> Miami Dolphins</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New England Patriots'}}); return false;"> New England Patriots</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New York Jets'}}); return false;"> New York Jets</A></TD>
+</TR>
+
+<!-- AFC North -->
+<TR>
+<TD colspan="4" style="background:#003366; color:#fff; padding:10px; font-weight:bold;">AFC NORTH</TD>
+</TR>
+<TR>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Baltimore Ravens'}}); return false;"> Baltimore Ravens</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Cincinnati Bengals'}}); return false;"> Cincinnati Bengals</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Cleveland Browns'}}); return false;"> Cleveland Browns</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Pittsburgh Steelers'}}); return false;"> Pittsburgh Steelers</A></TD>
+</TR>
+
+<!-- AFC South -->
+<TR>
+<TD colspan="4" style="background:#003366; color:#fff; padding:10px; font-weight:bold;">AFC SOUTH</TD>
+</TR>
+<TR>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Houston Texans'}}); return false;"> Houston Texans</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Indianapolis Colts'}}); return false;"> Indianapolis Colts</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Jacksonville Jaguars'}}); return false;"> Jacksonville Jaguars</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Tennessee Titans'}}); return false;"> Tennessee Titans</A></TD>
+</TR>
+
+<!-- AFC West -->
+<TR>
+<TD colspan="4" style="background:#003366; color:#fff; padding:10px; font-weight:bold;">AFC WEST</TD>
+</TR>
+<TR>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Denver Broncos'}}); return false;"> Denver Broncos</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Kansas City Chiefs'}}); return false;"> Kansas City Chiefs</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Las Vegas Raiders'}}); return false;"> Las Vegas Raiders</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Los Angeles Chargers'}}); return false;"> Los Angeles Chargers</A></TD>
+</TR>
+
+<!-- NFC East -->
+<TR>
+<TD colspan="4" style="background:#d50a0a; color:#fff; padding:10px; font-weight:bold;">NFC EAST</TD>
+</TR>
+<TR>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Dallas Cowboys'}}); return false;"> Dallas Cowboys</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New York Giants'}}); return false;"> New York Giants</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Philadelphia Eagles'}}); return false;"> Philadelphia Eagles</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Washington Commanders'}}); return false;"> Washington Commanders</A></TD>
+</TR>
+
+<!-- NFC North -->
+<TR>
+<TD colspan="4" style="background:#d50a0a; color:#fff; padding:10px; font-weight:bold;">NFC NORTH</TD>
+</TR>
+<TR>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Chicago Bears'}}); return false;"> Chicago Bears</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Detroit Lions'}}); return false;"> Detroit Lions</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Green Bay Packers'}}); return false;"> Green Bay Packers</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Minnesota Vikings'}}); return false;"> Minnesota Vikings</A></TD>
+</TR>
+
+<!-- NFC South -->
+<TR>
+<TD colspan="4" style="background:#d50a0a; color:#fff; padding:10px; font-weight:bold;">NFC SOUTH</TD>
+</TR>
+<TR>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Atlanta Falcons'}}); return false;"> Atlanta Falcons</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Carolina Panthers'}}); return false;"> Carolina Panthers</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New Orleans Saints'}}); return false;"> New Orleans Saints</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Tampa Bay Buccaneers'}}); return false;"> Tampa Bay Buccaneers</A></TD>
+</TR>
+
+<!-- NFC West -->
+<TR>
+<TD colspan="4" style="background:#d50a0a; color:#fff; padding:10px; font-weight:bold;">NFC WEST</TD>
+</TR>
+<TR>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Arizona Cardinals'}}); return false;"> Arizona Cardinals</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Los Angeles Rams'}}); return false;"> Los Angeles Rams</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'San Francisco 49ers'}}); return false;"> San Francisco 49ers</A></TD>
+<TD BACKGROUND="fade.gif"><A HREF="#" onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Seattle Seahawks'}}); return false;"> Seattle Seahawks</A></TD>
+</TR>
+</TABLE>
+</div>
+
+<!-- Application Insights Manager Modal -->
 	<div id="appInsightsModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:30px; border:3px solid #000; border-radius:10px; max-width:800px; width:90%; max-height:90vh; overflow-y:auto; z-index:1000; box-shadow:0 0 50px rgba(0,0,0,0.5);">
 		<h2>Application Insights Manager</h2>
 		<button onclick="closeAppInsightsManager()" style="position:absolute; top:10px; right:10px; padding:5px 10px; cursor:pointer;">✕</button>
@@ -335,3 +315,5 @@ Then save and reload the page.`;
 </body>
 
 </html>
+
+
