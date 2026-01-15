@@ -1,0 +1,31 @@
+HTTrack3.49-2+htsswf+htsjava launched on Thu, 15 Jan 2026 16:39:12 at https://www.nfl.com/international +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwr2C2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://www.nfl.com/international -O1 "C:\My Web Sites\NFL_Mirror" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+16:41:06	Warning: 	Temporary Redirect for https://www.nfl.com/
+16:41:06	Warning: 	File has moved from https://www.nfl.com/ to /international/
+16:41:08	Warning: 	Unknown Error for https://www.nfl.com/schedules/
+16:41:08	Warning: 	File has moved from https://www.nfl.com/schedules/ to /schedules
+16:41:10	Warning: 	Moved Permanently for https://www.nfl.com/network/games/
+16:41:10	Warning: 	File has moved from https://www.nfl.com/network/games/ to /schedules/2025/prime-time/nfl-network
+16:41:10	Warning: 	Unknown Error for https://www.nfl.com/scores/
+16:41:10	Warning: 	File has moved from https://www.nfl.com/scores/ to /scores
+16:41:10	Warning: 	Found for https://www.nfl.com/plus/replays/
+16:41:10	Warning: 	File has moved from https://www.nfl.com/plus/replays/ to https://www.nflgamepass.com/
+16:41:10	Warning: 	Moved Permanently for https://www.nfl.com/videos/channel/game-highlights-vc/
+16:41:10	Warning: 	File has moved from https://www.nfl.com/videos/channel/game-highlights-vc/ to /videos/channel/game-highlights-vc
+16:41:11	Warning: 	Unknown Error for https://www.nfl.com/playoffs/bracket/
+16:41:11	Warning: 	File has moved from https://www.nfl.com/playoffs/bracket/ to /playoffs/bracket
+16:41:11	Warning: 	Unknown Error for https://www.nfl.com/pro-bowl-games/
+16:41:11	Warning: 	File has moved from https://www.nfl.com/pro-bowl-games/ to /pro-bowl-games
+16:42:09	Warning: 	Moved Permanently for https://www.nfl.com/legal/subscriptions_terms/
+16:42:09	Warning: 	File has moved from https://www.nfl.com/legal/subscriptions_terms/ to /legal/subscriptions_terms
+16:42:13	Warning: 	Moved Permanently for https://www.nfl.com/activate/
+16:42:13	Warning: 	File has moved from https://www.nfl.com/activate/ to https://id.nfl.com/account/activate
+
+HTTrack Website Copier/3.49-2 mirror complete in 3 minutes 27 seconds : 216 links scanned, 205 files written (52248056 bytes overall) [13323920 bytes received at 64366 bytes/sec], 51680349 bytes transferred using HTTP compression in 203 files, ratio 21%, 13.1 requests per connection
+(No errors, 20 warnings, 0 messages)
