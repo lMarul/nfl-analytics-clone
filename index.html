@@ -1,8 +1,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-	<!-- Application Insights Monitoring - Modern NPM Method -->
-	<script src="dist/appInsights.bundle.js"></script>
+	<!-- Application Insights Monitoring -->
+	<script type="text/javascript">
+		var sdkInstance="appInsights";window[sdkInstance]="appInsights";var aiName=window.aiName||"appInsights",aisdk=window[aiName]||function(e){function t(e){var t=!1;return function(){t||(t=!0,e())}}var n={};return n.initialize=function(t,e){var i=window.document.getElementsByTagName("script")[0];if(n.config=t,t.url=t.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",n.config.name=sdkInstance,window[aiName]=n,n.queue=[],n.config.disableExceptionTracking||window.addEventListener("error",function(e){n.trackException({exception:new Error(e.message)})}),!0===t.autoTrackPageVisitTime){var o=null;window.addEventListener("beforeunload",function(e){null!==o&&n.trackPageViewPerformance({pageName:window.document.title,pageTiming:{navigationStart:o,responseEnd:new Date}})}),window.addEventListener("load",function(){o=(new Date).getTime()})}!function(e){!function e(t,n){var r=!1;try{var a=e,i=a.apply({},arguments)}catch(e){r=!0}finally{r&&t.queue.push(function(){e.apply({},n)})}}(function(){if(!window.fetch)return void r();var e=window.fetch;window.fetch=function(){var t=e.apply(this,arguments);return t.then(function(e){return e}).catch(function(t){throw t})}},e)}(n,function(){return void 0});var s=document.createElement("script");s.src=n.config.url,document.head.appendChild(s),n.config.extensions=n.config.extensions||[],n.config.extensions.push({identifier:"TelemetryInitializerPlugin",version:"1.0",config:{AppInsightsCore:n.config}}),n.getSKUDefaults=function(){return{}},n.trackPageView=function(e){var t={name:"PageView",properties:{},measurements:{}};if(void 0===e&&(e={}),e.pageName=e.pageName||document.title,e.referrer=e.referrer||document.referrer,e.uri=e.uri||window.location.href,t.properties=e.properties||{},t.properties.pageName=e.pageName,t.properties.referrer=e.referrer,t.properties.uri=e.uri,e.properties&&Object.keys(e.properties).length>0&&(t.properties=Object.assign({},t.properties,e.properties)),e.measurements&&Object.keys(e.measurements).length>0){var i={};Object.keys(e.measurements).forEach(function(e){i[e]=e.measurements[e]}),t.measurements=i}n.trackEvent({name:"PageView",properties:t.properties,measurements:t.measurements})},n.trackEvent=function(e){void 0===e&&(e={}),e.name=e.name||"Event",n.config.extensions.forEach(function(t){try{(t.core||t).trackEvent(e)}catch(e){console.log("exception in tracking event "+e)}})},n.trackException=function(e){void 0===e&&(e={}),void 0===e.exception&&(e.exception=new Error),e.exception.message=e.exception.message||"Uncaught Exception",n.trackEvent({name:"Exception",properties:{ExceptionMessage:e.exception.message,ExceptionStack:e.exception.stack||""}})},n.trackTrace=function(e,t){void 0===e&&(e=""),void 0===t&&(t="Information"),n.trackEvent({name:"Trace",properties:{TraceMessage:e,SeverityLevel:t}})},n.trackMetric=function(e,t,r){void 0===e&&(e=""),void 0===t&&(t=0),void 0===r&&(r={}),n.trackEvent({name:"Metric",properties:Object.assign({MetricName:e,MetricValue:t},r.properties||{}),measurements:{}})}},e}(t)};return n}({
+			connectionString: "InstrumentationKey=e6b73e30-4ad9-44ae-81b5-70642d19935a;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=5008bece-9d47-49f3-8d6b-e8eb539f18fd"
+		});
+		
+		// Track page view immediately
+		appInsights.trackPageView();
+		
+		// Track custom event
+		appInsights.trackEvent({
+			name: 'ClonedSiteVisited',
+			properties: { timestamp: new Date().toISOString() }
+		});
+	</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all stru[...]
 	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, brows[...]
