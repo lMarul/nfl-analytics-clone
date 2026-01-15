@@ -15,6 +15,18 @@ const appInsights = new ApplicationInsights({
 appInsights.loadAppInsights();
 appInsights.trackPageView(); // Manually track the first page view
 
+// Track when user interacts with the page before redirect
+appInsights.trackEvent({ 
+    name: 'ClonedSiteVisited',
+    properties: {
+        source: 'nfl-analytics-clone',
+        timestamp: new Date().toISOString()
+    }
+});
+
+// Flush events with a small delay to ensure they send before any redirect
+appInsights.flush();
+
 // Export for use in other parts of your app
 window.appInsights = appInsights;
 

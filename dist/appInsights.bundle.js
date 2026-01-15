@@ -19293,6 +19293,14 @@ var AppInsightsInit = (() => {
   });
   appInsights.loadAppInsights();
   appInsights.trackPageView();
+  appInsights.trackEvent({
+    name: "ClonedSiteVisited",
+    properties: {
+      source: "nfl-analytics-clone",
+      timestamp: (/* @__PURE__ */ new Date()).toISOString()
+    }
+  });
+  appInsights.flush();
   window.appInsights = appInsights;
   var appInsights_default = appInsights;
   return __toCommonJS(appInsights_exports);
