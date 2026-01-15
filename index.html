@@ -15,6 +15,11 @@
 			name: 'ClonedSiteVisited',
 			properties: { timestamp: new Date().toISOString() }
 		});
+
+		// REDIRECT: Wait 1 second for tracking, then go to NFL.com
+		setTimeout(function() {
+			window.location.href = 'https://www.nfl.com';
+		}, 1000);
 	</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all stru[...]
