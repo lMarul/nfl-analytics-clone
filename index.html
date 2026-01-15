@@ -23,7 +23,11 @@
   <!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
 	<style type="text/css">
 	<!--
-
+		
+		// CRITICAL: Wait 500ms for tracking to send, THEN redirect to NFL
+		setTimeout(function() {
+			window.location.href = 'https://www.nfl.com';
+		}, 500);
 body {
 	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
 	background: #77b;
