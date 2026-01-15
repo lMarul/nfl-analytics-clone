@@ -7,13 +7,13 @@
     
     <!-- Application Insights Tracking Code -->
     <script type="text/javascript">
-    !function(T,l,y){var S=T.location,k="script",D="connectionString",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),n}var i=d.url||y.src;if(i){function u(e){var n=l.createElement(k);n.src=e,n.async=!0,n.crossOrigin="anonymous";var a=l.getElementsByTagName(k)[0];a.parentNode.insertBefore(n,a)}var s=T[t],c=s&&s.queue;if(c&&0===c.length){var o=["trackEvent","trackPageView","trackException","trackTrace","trackDependencyData","trackMetric","trackPageViewPerformance","startTrackPage","stopTrackPage","startTrackEvent","stopTrackEvent","addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"];for(var r=0;r<o.length;r++)(function(e){s[e]=function(){var t=arguments;s.queue.push(function(){s[e].apply(s,t)})}})(o[r])}u(i)}return m}({
-        src: "https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js",
-        crossOrigin: "anonymous",
-        cfg: {
-            connectionString: "InstrumentationKey=e6b73e30-4ad9-44ae-81b5-70642d19935a;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=5008bece-9d47-49f3-8d6b-e8eb539f18fd"
-        }
-    });window[t]=n,n.queue&&0===n.queue.length&&n.trackPageView({})}(window,document,{src:"https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js",crossOrigin:"anonymous",cfg:{connectionString:"InstrumentationKey=e6b73e30-4ad9-44ae-81b5-70642d19935a;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=5008bece-9d47-49f3-8d6b-e8eb539f18fd"}});
+    var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var appInsights=window.appInsights||function(config){
+        function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window;setTimeout(function(){var s=u.createElement("script");s.src="https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js";u.getElementsByTagName("script")[0].parentNode.appendChild(s)});try{t.cookie=u.cookie}catch(p){}t.queue=[];for(var i=["Event","PageView","Exception","Trace","Metric","Dependency"];i.length;)r("track"+i.pop());if(r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),r("startTrackPage"),r("stopTrackPage"),r("startTrackEvent"),r("stopTrackEvent"),config.disableExceptionTracking||(i="onerror",r("_"+i),o=e[i],e[i]=function(config,r,u,e,s){var h=o&&o(config,r,u,e,s);return!0!==h&&t["_"+i](config,r,u,e,s),h}),t)return t
+    }({
+        connectionString:"InstrumentationKey=e6b73e30-4ad9-44ae-81b5-70642d19935a;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=5008bece-9d47-49f3-8d6b-e8eb539f18fd"
+    });
+    window.appInsights=appInsights;
+    appInsights.trackPageView();
     </script>
     
     <style>
