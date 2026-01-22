@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
     <html lang="en-US" dir="ltr" />
@@ -65,7 +65,57 @@
   
 
 
-  <!-- OneTrust Cookies Consent Notice start -->
+
+<!-- Application Insights - Team Page Visit Tracking -->
+<script type="text/javascript">
+  var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("addTelemetryInitializer"),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),t.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
+  {
+    connectionString:"InstrumentationKey=2029ad3b-2466-4e01-8ed9-b5f9029cc8f6;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=e1cb8124-8ea7-4cd2-b3e2-ac1c473ffce5"
+  }
+  );window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
+  
+  // Automatically track team page visit based on URL
+  (function() {
+    try {
+      var pathParts = window.location.pathname.split('/');
+      var teamSlug = '';
+      
+      // Find the team slug from path (e.g., "buffalo-bills")
+      for (var i = pathParts.length - 1; i >= 0; i--) {
+        if (pathParts[i] && pathParts[i] !== 'index.html') {
+          teamSlug = pathParts[i];
+          break;
+        }
+      }
+      
+      if (teamSlug) {
+        // Convert slug to proper team name (e.g., "buffalo-bills" -> "Buffalo Bills")
+        var teamName = teamSlug.split('-').map(function(word) {
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        }).join(' ');
+        
+        console.log('Team page visited:', teamName);
+        
+        // Track the page visit
+        appInsights.trackEvent({
+          name: 'TeamPageVisit',
+          properties: {
+            Team: teamName,
+            TeamSlug: teamSlug,
+            URL: window.location.href,
+            PageTitle: document.title
+          }
+        });
+        
+        console.log('Team page visit tracked successfully');
+      }
+    } catch (e) {
+      console.error('Error tracking team page visit:', e);
+    }
+  })();
+</script>
+
+    <!-- OneTrust Cookies Consent Notice start -->
   <script src="../../../cdn.cookielaw.org/scripttemplates/otSDKStub.js"
           type="text/javascript" charset="UTF-8"
           data-domain-script="e7957cc7-f869-4093-8b89-94bbc6dd16d8"></script>
