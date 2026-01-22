@@ -67,9 +67,34 @@
 <script type="text/javascript">
   var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("addTelemetryInitializer"),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),t.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
   {
-    instrumentationKey:"InstrumentationKey=2029ad3b-2466-4e01-8ed9-b5f9029cc8f6;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=e1cb8124-8ea7-4cd2-b3e2-ac1c473ffce5"
+    connectionString:"InstrumentationKey=2029ad3b-2466-4e01-8ed9-b5f9029cc8f6;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=e1cb8124-8ea7-4cd2-b3e2-ac1c473ffce5"
   }
   );window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
+  
+  // Helper function to track team clicks with proper event flushing
+  window.trackTeamClick = function(teamName, action, targetUrl) {
+    try {
+      appInsights.trackEvent({
+        name: 'TeamViewed',
+        properties: {
+          Team: teamName,
+          Action: action
+        }
+      });
+      // Flush events immediately to ensure they're sent before navigation
+      appInsights.flush();
+      
+      // Small delay to ensure event is sent, then navigate
+      setTimeout(function() {
+        window.location.href = targetUrl;
+      }, 300);
+    } catch (e) {
+      // If tracking fails, still navigate
+      console.error('Tracking error:', e);
+      window.location.href = targetUrl;
+    }
+    return false; // Prevent default link behavior
+  };
 </script>
   
 
@@ -1499,7 +1524,7 @@ window.adUnit = leagueAdvId + adUnitName;
                    href="dallas-cowboys/index.html" 
                    target="_self"
                    aria-label="View Dallas Cowboys Profile"
-                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Dallas Cowboys', Action: 'View Profile'}});">
+                   onclick="return trackTeamClick('Dallas Cowboys', 'View Profile', 'dallas-cowboys/index.html');">
                   View Profile
                 </a>
                 <a 
@@ -1509,7 +1534,7 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_url="https://www.dallascowboys.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Dallas Cowboys Website" href="https://www.dallascowboys.com/" target="_blank"
                    aria-label="View Dallas Cowboys Website - Opens new window"
-                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Dallas Cowboys', Action: 'View Full Site'}});">
+                   onclick="return trackTeamClick('Dallas Cowboys', 'View Full Site', 'https://www.dallascowboys.com/');">
                   View Full Site
                 </a>
             </div>
