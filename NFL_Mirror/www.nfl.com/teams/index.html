@@ -67,7 +67,7 @@
 <script type="text/javascript">
   var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("addTelemetryInitializer"),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),t.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
   {
-    instrumentationKey:"YOUR_INSTRUMENTATION_KEY_HERE"
+    instrumentationKey:"InstrumentationKey=2029ad3b-2466-4e01-8ed9-b5f9029cc8f6;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://eastasia.livediagnostics.monitor.azure.com/;ApplicationId=e1cb8124-8ea7-4cd2-b3e2-ac1c473ffce5"
   }
   );window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
 </script>
@@ -1544,7 +1544,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Detroit Lions Profile" 
                    href="detroit-lions/index.html" 
                    target="_self"
-                   aria-label="View Detroit Lions Profile">
+                   aria-label="View Detroit Lions Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Detroit Lions', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1553,7 +1554,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.detroitlions.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Detroit Lions Website" href="https://www.detroitlions.com/" target="_blank"
-                   aria-label="View Detroit Lions Website - Opens new window">
+                   aria-label="View Detroit Lions Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Detroit Lions', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1588,7 +1590,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Green Bay Packers Profile" 
                    href="green-bay-packers/index.html" 
                    target="_self"
-                   aria-label="View Green Bay Packers Profile">
+                   aria-label="View Green Bay Packers Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Green Bay Packers', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1597,7 +1600,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.packers.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Green Bay Packers Website" href="https://www.packers.com/" target="_blank"
-                   aria-label="View Green Bay Packers Website - Opens new window">
+                   aria-label="View Green Bay Packers Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Green Bay Packers', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1632,7 +1636,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Los Angeles Rams Profile" 
                    href="los-angeles-rams/index.html" 
                    target="_self"
-                   aria-label="View Los Angeles Rams Profile">
+                   aria-label="View Los Angeles Rams Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Los Angeles Rams', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1641,7 +1646,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.therams.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Los Angeles Rams Website" href="https://www.therams.com/" target="_blank"
-                   aria-label="View Los Angeles Rams Website - Opens new window">
+                   aria-label="View Los Angeles Rams Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Los Angeles Rams', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1676,7 +1682,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Minnesota Vikings Profile" 
                    href="minnesota-vikings/index.html" 
                    target="_self"
-                   aria-label="View Minnesota Vikings Profile">
+                   aria-label="View Minnesota Vikings Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Minnesota Vikings', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1685,7 +1692,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.vikings.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Minnesota Vikings Website" href="https://www.vikings.com/" target="_blank"
-                   aria-label="View Minnesota Vikings Website - Opens new window">
+                   aria-label="View Minnesota Vikings Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Minnesota Vikings', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1720,7 +1728,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View New Orleans Saints Profile" 
                    href="new-orleans-saints/index.html" 
                    target="_self"
-                   aria-label="View New Orleans Saints Profile">
+                   aria-label="View New Orleans Saints Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New Orleans Saints', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1729,7 +1738,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.neworleanssaints.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View New Orleans Saints Website" href="https://www.neworleanssaints.com/" target="_blank"
-                   aria-label="View New Orleans Saints Website - Opens new window">
+                   aria-label="View New Orleans Saints Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New Orleans Saints', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1764,7 +1774,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View New York Giants Profile" 
                    href="new-york-giants/index.html" 
                    target="_self"
-                   aria-label="View New York Giants Profile">
+                   aria-label="View New York Giants Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New York Giants', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1773,7 +1784,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.giants.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View New York Giants Website" href="https://www.giants.com/" target="_blank"
-                   aria-label="View New York Giants Website - Opens new window">
+                   aria-label="View New York Giants Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New York Giants', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1808,7 +1820,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Philadelphia Eagles Profile" 
                    href="philadelphia-eagles/index.html" 
                    target="_self"
-                   aria-label="View Philadelphia Eagles Profile">
+                   aria-label="View Philadelphia Eagles Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Philadelphia Eagles', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1817,7 +1830,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.philadelphiaeagles.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Philadelphia Eagles Website" href="https://www.philadelphiaeagles.com/" target="_blank"
-                   aria-label="View Philadelphia Eagles Website - Opens new window">
+                   aria-label="View Philadelphia Eagles Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Philadelphia Eagles', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1852,7 +1866,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View San Francisco 49ers Profile" 
                    href="san-francisco-49ers/index.html" 
                    target="_self"
-                   aria-label="View San Francisco 49ers Profile">
+                   aria-label="View San Francisco 49ers Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'San Francisco 49ers', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1861,7 +1876,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.49ers.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View San Francisco 49ers Website" href="https://www.49ers.com/" target="_blank"
-                   aria-label="View San Francisco 49ers Website - Opens new window">
+                   aria-label="View San Francisco 49ers Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'San Francisco 49ers', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1896,7 +1912,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Seattle Seahawks Profile" 
                    href="seattle-seahawks/index.html" 
                    target="_self"
-                   aria-label="View Seattle Seahawks Profile">
+                   aria-label="View Seattle Seahawks Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Seattle Seahawks', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1905,7 +1922,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.seahawks.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Seattle Seahawks Website" href="https://www.seahawks.com/" target="_blank"
-                   aria-label="View Seattle Seahawks Website - Opens new window">
+                   aria-label="View Seattle Seahawks Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Seattle Seahawks', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1940,7 +1958,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Tampa Bay Buccaneers Profile" 
                    href="tampa-bay-buccaneers/index.html" 
                    target="_self"
-                   aria-label="View Tampa Bay Buccaneers Profile">
+                   aria-label="View Tampa Bay Buccaneers Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Tampa Bay Buccaneers', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1949,7 +1968,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.buccaneers.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Tampa Bay Buccaneers Website" href="https://www.buccaneers.com/" target="_blank"
-                   aria-label="View Tampa Bay Buccaneers Website - Opens new window">
+                   aria-label="View Tampa Bay Buccaneers Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Tampa Bay Buccaneers', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -1984,7 +2004,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Washington Commanders Profile" 
                    href="washington-commanders/index.html" 
                    target="_self"
-                   aria-label="View Washington Commanders Profile">
+                   aria-label="View Washington Commanders Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Washington Commanders', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -1993,7 +2014,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.commanders.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Washington Commanders Website" href="https://www.commanders.com/" target="_blank"
-                   aria-label="View Washington Commanders Website - Opens new window">
+                   aria-label="View Washington Commanders Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Washington Commanders', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2055,7 +2077,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Baltimore Ravens Profile" 
                    href="baltimore-ravens/index.html" 
                    target="_self"
-                   aria-label="View Baltimore Ravens Profile">
+                   aria-label="View Baltimore Ravens Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Baltimore Ravens', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2064,7 +2087,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.baltimoreravens.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Baltimore Ravens Website" href="https://www.baltimoreravens.com/" target="_blank"
-                   aria-label="View Baltimore Ravens Website - Opens new window">
+                   aria-label="View Baltimore Ravens Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Baltimore Ravens', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2099,7 +2123,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Buffalo Bills Profile" 
                    href="buffalo-bills/index.html" 
                    target="_self"
-                   aria-label="View Buffalo Bills Profile">
+                   aria-label="View Buffalo Bills Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Buffalo Bills', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2108,7 +2133,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.buffalobills.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Buffalo Bills Website" href="https://www.buffalobills.com/" target="_blank"
-                   aria-label="View Buffalo Bills Website - Opens new window">
+                   aria-label="View Buffalo Bills Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Buffalo Bills', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2143,7 +2169,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Cincinnati Bengals Profile" 
                    href="cincinnati-bengals/index.html" 
                    target="_self"
-                   aria-label="View Cincinnati Bengals Profile">
+                   aria-label="View Cincinnati Bengals Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Cincinnati Bengals', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2152,7 +2179,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.bengals.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Cincinnati Bengals Website" href="https://www.bengals.com/" target="_blank"
-                   aria-label="View Cincinnati Bengals Website - Opens new window">
+                   aria-label="View Cincinnati Bengals Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Cincinnati Bengals', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2187,7 +2215,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Cleveland Browns Profile" 
                    href="cleveland-browns/index.html" 
                    target="_self"
-                   aria-label="View Cleveland Browns Profile">
+                   aria-label="View Cleveland Browns Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Cleveland Browns', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2196,7 +2225,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.clevelandbrowns.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Cleveland Browns Website" href="https://www.clevelandbrowns.com/" target="_blank"
-                   aria-label="View Cleveland Browns Website - Opens new window">
+                   aria-label="View Cleveland Browns Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Cleveland Browns', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2231,7 +2261,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Denver Broncos Profile" 
                    href="denver-broncos/index.html" 
                    target="_self"
-                   aria-label="View Denver Broncos Profile">
+                   aria-label="View Denver Broncos Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Denver Broncos', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2240,7 +2271,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.denverbroncos.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Denver Broncos Website" href="https://www.denverbroncos.com/" target="_blank"
-                   aria-label="View Denver Broncos Website - Opens new window">
+                   aria-label="View Denver Broncos Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Denver Broncos', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2275,7 +2307,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Houston Texans Profile" 
                    href="https://www.nfl.com/teams/houston-texans" 
                    target="_self"
-                   aria-label="View Houston Texans Profile">
+                   aria-label="View Houston Texans Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Houston Texans', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2284,7 +2317,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.houstontexans.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Houston Texans Website" href="https://www.houstontexans.com/" target="_blank"
-                   aria-label="View Houston Texans Website - Opens new window">
+                   aria-label="View Houston Texans Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Houston Texans', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2319,7 +2353,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Indianapolis Colts Profile" 
                    href="https://www.nfl.com/teams/indianapolis-colts" 
                    target="_self"
-                   aria-label="View Indianapolis Colts Profile">
+                   aria-label="View Indianapolis Colts Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Indianapolis Colts', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2328,7 +2363,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.colts.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Indianapolis Colts Website" href="https://www.colts.com/" target="_blank"
-                   aria-label="View Indianapolis Colts Website - Opens new window">
+                   aria-label="View Indianapolis Colts Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Indianapolis Colts', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2363,7 +2399,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Jacksonville Jaguars Profile" 
                    href="jacksonville-jaguars/index.html" 
                    target="_self"
-                   aria-label="View Jacksonville Jaguars Profile">
+                   aria-label="View Jacksonville Jaguars Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Jacksonville Jaguars', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2372,7 +2409,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.jaguars.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Jacksonville Jaguars Website" href="https://www.jaguars.com/" target="_blank"
-                   aria-label="View Jacksonville Jaguars Website - Opens new window">
+                   aria-label="View Jacksonville Jaguars Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Jacksonville Jaguars', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2453,7 +2491,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Las Vegas Raiders Profile" 
                    href="las-vegas-raiders/index.html" 
                    target="_self"
-                   aria-label="View Las Vegas Raiders Profile">
+                   aria-label="View Las Vegas Raiders Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Las Vegas Raiders', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2462,7 +2501,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.raiders.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Las Vegas Raiders Website" href="https://www.raiders.com/" target="_blank"
-                   aria-label="View Las Vegas Raiders Website - Opens new window">
+                   aria-label="View Las Vegas Raiders Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Las Vegas Raiders', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2497,7 +2537,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Los Angeles Chargers Profile" 
                    href="los-angeles-chargers/index.html" 
                    target="_self"
-                   aria-label="View Los Angeles Chargers Profile">
+                   aria-label="View Los Angeles Chargers Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Los Angeles Chargers', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2506,7 +2547,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.chargers.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Los Angeles Chargers Website" href="https://www.chargers.com/" target="_blank"
-                   aria-label="View Los Angeles Chargers Website - Opens new window">
+                   aria-label="View Los Angeles Chargers Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Los Angeles Chargers', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2541,7 +2583,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Miami Dolphins Profile" 
                    href="miami-dolphins/index.html" 
                    target="_self"
-                   aria-label="View Miami Dolphins Profile">
+                   aria-label="View Miami Dolphins Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Miami Dolphins', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2550,7 +2593,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.miamidolphins.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Miami Dolphins Website" href="https://www.miamidolphins.com/" target="_blank"
-                   aria-label="View Miami Dolphins Website - Opens new window">
+                   aria-label="View Miami Dolphins Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Miami Dolphins', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2585,7 +2629,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View New England Patriots Profile" 
                    href="new-england-patriots/index.html" 
                    target="_self"
-                   aria-label="View New England Patriots Profile">
+                   aria-label="View New England Patriots Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New England Patriots', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2594,7 +2639,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.patriots.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View New England Patriots Website" href="https://www.patriots.com/" target="_blank"
-                   aria-label="View New England Patriots Website - Opens new window">
+                   aria-label="View New England Patriots Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New England Patriots', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2629,7 +2675,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View New York Jets Profile" 
                    href="new-york-jets/index.html" 
                    target="_self"
-                   aria-label="View New York Jets Profile">
+                   aria-label="View New York Jets Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New York Jets', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2638,7 +2685,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.newyorkjets.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View New York Jets Website" href="https://www.newyorkjets.com/" target="_blank"
-                   aria-label="View New York Jets Website - Opens new window">
+                   aria-label="View New York Jets Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'New York Jets', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2673,7 +2721,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Pittsburgh Steelers Profile" 
                    href="pittsburgh-steelers/index.html" 
                    target="_self"
-                   aria-label="View Pittsburgh Steelers Profile">
+                   aria-label="View Pittsburgh Steelers Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Pittsburgh Steelers', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2682,7 +2731,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.steelers.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Pittsburgh Steelers Website" href="https://www.steelers.com/" target="_blank"
-                   aria-label="View Pittsburgh Steelers Website - Opens new window">
+                   aria-label="View Pittsburgh Steelers Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Pittsburgh Steelers', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
@@ -2717,7 +2767,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    title="View Tennessee Titans Profile" 
                    href="tennessee-titans/index.html" 
                    target="_self"
-                   aria-label="View Tennessee Titans Profile">
+                   aria-label="View Tennessee Titans Profile"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Tennessee Titans', Action: 'View Profile'}});">
                   View Profile
                 </a>
                 <a 
@@ -2726,7 +2777,8 @@ window.adUnit = leagueAdvId + adUnitName;
                    data-link_name="2nd CTA View Full Site"
                    data-link_url="https://www.tennesseetitans.com/"
                    class="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary" title="View Tennessee Titans Website" href="https://www.tennesseetitans.com/" target="_blank"
-                   aria-label="View Tennessee Titans Website - Opens new window">
+                   aria-label="View Tennessee Titans Website - Opens new window"
+                   onclick="appInsights.trackEvent({name: 'TeamViewed', properties: {Team: 'Tennessee Titans', Action: 'View Full Site'}});">
                   View Full Site
                 </a>
             </div>
