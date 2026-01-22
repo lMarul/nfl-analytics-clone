@@ -71,9 +71,20 @@
   }
   );window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
   
+  // Debug: Log Application Insights initialization
+  console.log('Application Insights initialized:', typeof appInsights !== 'undefined');
+  
   // Helper function to track team clicks with proper event flushing
   window.trackTeamClick = function(teamName, action, targetUrl) {
+    console.log('trackTeamClick called:', teamName, action);
     try {
+      if (typeof appInsights === 'undefined') {
+        console.error('Application Insights not loaded!');
+        window.location.href = targetUrl;
+        return false;
+      }
+      
+      console.log('Tracking event...');
       appInsights.trackEvent({
         name: 'TeamViewed',
         properties: {
@@ -81,11 +92,15 @@
           Action: action
         }
       });
+      console.log('Event tracked, flushing...');
+      
       // Flush events immediately to ensure they're sent before navigation
       appInsights.flush();
+      console.log('Flushed. Navigating in 300ms...');
       
       // Small delay to ensure event is sent, then navigate
       setTimeout(function() {
+        console.log('Navigating to:', targetUrl);
         window.location.href = targetUrl;
       }, 300);
     } catch (e) {
@@ -95,6 +110,9 @@
     }
     return false; // Prevent default link behavior
   };
+  
+  // Debug: Verify function is available
+  console.log('trackTeamClick function defined:', typeof window.trackTeamClick);
 </script>
   
 
